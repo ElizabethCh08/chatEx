@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\chat",
+    "\\src\\app\\pages\\login",
+    "\\src\\app\\services",
+    "\\src\\environments",
+    "\\src\\theme"
+  ],
+  "SelectedNode": "\\src\\app\\pages\\login\\login.page.ts",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="majorelleblue">
+    <ion-title>ChatEx</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="credentialForm">
+    <ion-item>
+      <ion-input
+        placeholder="Correo"
+        formControlName="email"
+        autofocus="true"
+        clearInput="true"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+      <span *ngIf="email.errors?.required">Se requiere el correo</span>
+      <span *ngIf="email.errors?.email">El correo es incorrecto</span>
+    </div>
+
+    <ion-item>
+      <ion-input
+      placeholder="Contrase&ntilde;a"
+      type="password"
+      formControlName="password"
+      clearInput="true"
+    ></ion-input>
+    </ion-item>
+    <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Se requiere contrase&ntilde;a</span>
+        <span *ngIf="password.errors?.minlength">La contrase&ntilde;a debe tener al menos 6 d&iacute;gitos</span>
+    </div>
+
+  </form>
+
+  <ion-button (click)="signUp()" expand="full" color="majorelleblue">Reg&iacute;strate</ion-button>
+  <ion-button (click)="signIn()" expand="full" color="darkblue">Inicia sesi&oacute;n</ion-button>
+
+</ion-content>
