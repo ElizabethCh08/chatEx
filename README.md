@@ -1,2 +1,2 @@
 # chatEx
-# Aplicación que simula un chat, utilizando ionic y firebase
+ Aplicación que simula un chat, utilizando ionic y firebase
