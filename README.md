@@ -14,9 +14,23 @@ nd add @angular/fire_
 ## Funciones importantes ⚙️
 
 ## services / chat.service.ts
-_createUserWithEmailAndPassword: Crea una cuenta de usuario dentro de firebase_
-_onAuthStateChanged: Detecta cualquier cambio que se realice con el usuario autenticado_
-__
+createUserWithEmailAndPassword: Crea una cuenta de usuario dentro de firebase
+
+onAuthStateChanged: Detecta cualquier cambio que se realice con el usuario autenticado
+
+addChatMessage: Agrega un nuevo mensaje a una colección de mensajes
+
+getChatMessages: Obtiene un observable de los mensajes
+
+getUsers: Función auxiliar para obtener todos los usuarios
+
+getUserForMsg: Función auxiliar para encontrar el nombre de usuario (correo electrónico) en función de su UID
+
+## login.page.ts
+signUp: Función asíncrona para el registro de nuevos usuarios
+
+singIn: Función asíncrona para el inicio de sesión de usuarios registrados
+
 
 ### Analice las pruebas end-to-end 🔩
 
