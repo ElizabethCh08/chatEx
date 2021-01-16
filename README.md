@@ -5,8 +5,8 @@ _Aplicacion con ionic y firebase que simula un chat con inicio de sesión._
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-_git clone https://github.com/ElizabethCh08/chatEx.git _
-_nd add @angular/fire_
+_git clone https://github.com/ElizabethCh08/chatEx.git 
+nd add @angular/fire_
 
 
 ## Funciones importantes ⚙️
