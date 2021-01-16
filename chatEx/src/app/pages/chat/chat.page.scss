@@ -30,3 +30,12 @@
     float: right;
     font-size: small;
 }
+
+.ion-color-majorelleblue {
+    --ion-color-base: var(--ion-color-majorelleblue);
+    --ion-color-base-rgb: var(--ion-color-majorelleblue-rgb);
+    --ion-color-contrast: var(--ion-color-majorelleblue-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-majorelleblue-contrast-rgb);
+    --ion-color-shade: var(--ion-color-majorelleblue-shade);
+    --ion-color-tint: var(--ion-color-majorelleblue-tint);
+}

@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Open Chat</ion-title>
+  <ion-toolbar color="majorelleblue">
+    <ion-title>Chat</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="signOut()">
         <ion-icon name="log-out" slot="icon-only"></ion-icon>
@@ -12,9 +12,9 @@
 <ion-content class="ion-padding">
 <ion-grid>
   <ion-row *ngFor="let message of messages | async">
-      <ion-col size="9" class="message" [offset]="message.myMsg ? 3 : 0"
+      <ion-col *ngIf="!message.msg.url"
+               size="9" class="message" [offset]="message.myMsg ? 3 : 0"
                [ngClass]="{ 'my-message': message.myMsg, 'other-message': !message.myMsg }">
-
 
           <b>{{ message.fromName }}</b><br>
           <span>
@@ -23,6 +23,12 @@
           <!-- <div class="time ion-text-right"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div> -->
 
       </ion-col>
+
+      <ion-col *ngIf="message.msg.url">
+          {{message.msg.url}}
+          {{obtenerImg(message.msg.url)}}
+          <ion-img [src]="message.msg.url"></ion-img>
+      </ion-col>
   </ion-row>
 </ion-grid>
 </ion-content>
@@ -30,17 +36,27 @@
 
 <ion-footer>
   <ion-toolbar color="light">
-    <ion-row class="ion-align-items-center">
-      <ion-col size="10">
-        <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="newMsg" >
-        </ion-textarea>
-      </ion-col>
-      <ion-col size="2">
-        <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''"
-          class="msg-btn" (click)="sendMessage()">
-          <ion-icon name="send" slot="icon-only"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row>
+      <ion-row class="ion-align-items-center">
+          <ion-col size="8">
+              <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="newMsg">
+              </ion-textarea>
+          </ion-col>
+          <ion-col size="2">
+              <ion-button expand="block" fill="clear" color="majorelleblue"
+                          class="msg-btn">
+                  <ion-icon name="images-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+
+              <ion-input type="file" accept="image/*" (change)="subirArchivo($event)"></ion-input>
+
+
+          </ion-col>
+          <ion-col size="2">
+              <ion-button expand="block" fill="clear" color="majorelleblue" [disabled]="false"
+                          class="msg-btn" (click)="archivo ? guardarArchivo() : sendMessage()">
+                  <ion-icon name="send" slot="icon-only"></ion-icon>
+              </ion-button>
+          </ion-col>
+      </ion-row>
   </ion-toolbar>
 </ion-footer>

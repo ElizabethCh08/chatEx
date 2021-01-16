@@ -17,7 +17,8 @@ export interface Message {
   from: string;
   msg: string;
   fromName: string;
-  myMsg: boolean;
+    myMsg: boolean;
+    url: string;
 }
 
 @Injectable({
@@ -63,8 +64,7 @@ export class ChatService {
     return this.afs.collection('messages').add({
       msg,
         from: this.currentUser.uid,
-        createdAt: new Date()
-      // createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        createdAt: new Date(),
     });
     }
 
@@ -104,5 +104,12 @@ export class ChatService {
       }
     }
     return 'Deleted';
-  }
+    }
+
+    cargarArchivos(path) {
+        const storageRef = firebase.default.storage().refFromURL(path);
+        console.log('algo', storageRef);
+
+
+    }
 }

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ChatPageRoutingModule } from './chat-routing.module';
-
+import { FileUploadModule } from 'primeng/fileupload';
 import { ChatPage } from './chat.page';
 import { AngularFirestoreModule } from '@angular/fire/firestore/public_api';
 
@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore/public_api';
     FormsModule,
     IonicModule,
         ChatPageRoutingModule,
+        // FileUploadModule,
   ],
   declarations: [ChatPage]
 })
